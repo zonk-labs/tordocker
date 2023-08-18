@@ -1,0 +1,14 @@
+version: '3'
+services:
+  torimg:
+    image: torimg
+    ports:
+      - 127.0.0.1:9050:9050
+      - 127.0.0.1:9051:9051
+    volumes:
+      - type: bind
+        source: ./hs
+        target: /var/lib/tor
+      - type: bind
+        source: ./conf
+        target: /etc/torrc.d/
